@@ -3,22 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#searchInput').focus(function(){
+            
+    //open bootsrap modal
+element = document.getElementById("dialog-container");
+element.style.visibility = (element.style.visibility == "visible") ? "hidden" : "visible";
+});
+
+$('#close').click(function(){
+            
+            //open bootsrap modal
+        element = document.getElementById("dialog-container");
+        element.style.visibility = (element.style.visibility == "visible") ? "hidden" : "visible";
+        });
+
+    
+});
+// $('#searchInput').focus(function(){
+//     //open bootsrap modal
+//     $('#dialog-container').show()
+// });
+        </script> 
     
 </head>
 <body>
       
-        <nav class="card">
+        <nav class="navcard">
             <ul class="nav-list">
                 <img class="imgsize" src="Images/pngwing.com.png">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Explore</a></li>
-                <li><a href="#">Create</a></li>
+                <li class="active">Home</li>
+                <li>Explore</li>
+                <li>Create</li>
                 
             </ul>
-<form class="search-box">
-            <input type="text" placeholder="Search.. "/>
-            <button type="reset"></button>
-        </form>
+<div class="search-box">
+            <input id="searchInput" type="text" placeholder="Search.. "/>
+</div>
         
                   <!-- <div class="searchbox">
                     
@@ -36,23 +60,44 @@
         
             </div> -->
                 
-           
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" class="notificationIcon">
-                <path class="notificationIcon" d="M20 17H22V19H2V17H4V10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10V17ZM9 21H15V23H9V21Z">
+           <div class="notificationPanel">
+            <svg xmlns="http://www.w3.org/2000/svg"  class="notificationIcon">
+                <path class="imgsize" d="M20 17H22V19H2V17H4V10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10V17ZM9 21H15V23H9V21Z">
 
                 </path>
             </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" class="notificationIcon">
-                <path d="M6.45455 19L2 22.5V4C2 3.44772 2.44772 3 3 3H21C21.5523 3 22 3.44772 22 4V18C22 18.5523 21.5523 19 21 19H6.45455ZM7 10V12H9V10H7ZM11 10V12H13V10H11ZM15 10V12H17V10H15Z">
+            <svg xmlns="http://www.w3.org/2000/svg"  class="notificationIcon">
+                <path class="notificationIcon" d="M6.45455 19L2 22.5V4C2 3.44772 2.44772 3 3 3H21C21.5523 3 22 3.44772 22 4V18C22 18.5523 21.5523 19 21 19H6.45455ZM7 10V12H9V10H7ZM11 10V12H13V10H11ZM15 10V12H17V10H15Z">
 
                 </path>
             </svg>
             
-            <img class="imgsize notificationIcon" src="Images/pngwing.com.png">     
+            <img id="searchInput" class="notificationIcon" src="Images/pngwing.com.png"> 
+        </div>    
 
         </nav>
-
+       
         <div class="container">
+            <div id="dialog-container">
+                <div id="dialog">
+                    <div id="start_conditions_scroll">
+                        <div class="polaroid">
+                            <img src="img_5terre.jpg" alt="5 Terre" style="width:100%">
+                            <div class="container">
+                            <p>Cinque Terre</p>
+                            </div>
+                          </div>
+                          
+                          <div class="polaroid">
+                            <img src="lights600x400.jpg" alt="Norther Lights" style="width:100%">
+                            <div class="container">
+                            <p>Northern Lights</p>
+                            </div>
+                          </div>
+                    <button id="close" class="button" onclick="dialog()">Close</button>
+                </div>
+            </div>
+            </div>
             <div class="photo-gallery">
             <div class="">
                 <div class="photo">
@@ -96,8 +141,7 @@
                 </div>
                 <div class="photo">
                    <img src="Images/1005fad4-ff9b-4a20-81e0-1ac8e0714dc2.jpg" alt="">
-                </div>
-               
+                </div> 
               </div>
             </div>
                             <!-- <div class="column">
@@ -117,7 +161,7 @@
 
         
 
-    
+        
        
 </body>
 </html>

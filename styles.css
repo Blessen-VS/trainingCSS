@@ -1,23 +1,21 @@
-@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 
 *{
     padding:0;
     margin:0;
-    
     text-decoration: none;
     list-style:none;
    
 }
 
 .container {
-    padding: 20px 20px;
-    display: flex;
-     
+    padding: 5px 5px;
+    display: flex;     
   }
 
   .photo-gallery {
     display: flex;
-    gap: 20px;
+    gap: 10px;
+    margin-top: 70px;
   }
 
   .column {
@@ -33,16 +31,17 @@
     width: 100%;
     border-radius: 5px;
     height: 100%;
-    object-fit: cover;
+   
   }
 
 
 .nav{
     display:flex;
-    padding:15px 8%;
+    padding:8%;
     position: fixed;
     top:0;
     left:0;
+    height: 10px;
     width:100%;
     align-items: center;
     z-index: 10;
@@ -50,22 +49,28 @@
 
 .nav-list{
     display: flex;
+    flex-direction:row;
+    flex-shrink: 1;
     gap:1rem;
     list-style-type:none;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration:none;
+    
 }
 
 .nav-list li{
     min-width: 50px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: row;
     padding-top: 10px;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 650;
-    text-emphasis-color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    color: #000000;
 }
 
 .nav-list ul li.active{
-    color:rgb(12, 12, 12)
+    background-color:rgb(12, 12, 12)
 }
 
 .card {
@@ -74,6 +79,55 @@
     display:flex;
     gap: 20px;
     flex: 50%;
+    color:#000000;
+  } 
+  .navcard {
+    position:fixed;
+    background-color: #ffffff;
+    display:flex;
+    gap: 1rem;
+    padding:10px;
+    width:100%;
+
+  }
+  #dialog-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+}
+
+#dialog-container:before {
+    content:"";
+    background: rgba(0, 0, 0, .8);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+#dialog {
+    background: white;
+    padding:10px;
+    margin-left: 20%;
+    margin-right: 28%;
+    margin-top:4%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 50%;
+    border-radius: 6px;
+    text-align:left;
+    align-items: center;
+    z-index: 1000;
+    
+}
+
+  .nav-list li{
+    color: #070707;
   }
 
   .imgsize{
@@ -94,6 +148,7 @@
 
   .notificationIcon{
     background-color: rgb(255, 255, 255);
+    align-items: center;
     border-radius:00px;
     margin-top:0px;
     margin-left: 2rem;
@@ -101,6 +156,15 @@
     height:40px;
     background: size 2rem;
     align-items: left;
+  }
+
+  .notificationPanel{
+    display: flex;
+    gap:1rem;
+    flex-direction: row;
+    flex-shrink: 1;
+    width:100%;  
+    align-items: center; 
   }
 
   .searchicon{
@@ -114,7 +178,7 @@
   .searchiconimage{
     height: 20px;
     width:20px;
-  display:flex;
+    display:flex;
   }
 
   .searchText{
@@ -132,24 +196,6 @@
     outline: none;
 }
 
-  
-  .innersecondsearchdiv{
-    padding: 0px 8px 0px 16px;
-    width: 100%;
-    flex: 1 1 auto;
-    min-height: 0;
-    min-width: 0;
-    align-items: center;
-    box-sizing: border-box;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    margin-top: 0px;
-    height:3rem;
-    background: #cac7c7;
-    border-radius: 24px;
-  }
-
   .imageblock{
    border-radius: 20px;
    display:flex;
@@ -158,45 +204,47 @@
    height: fit-content;
    padding-top: 2px;
   }
-
   
   .search-box {
     font-size: 20px;
-    border: solid 2px #555353;
-    display: inline-block;
+    min-width:700px;
+    min-height:20px;
+    border: none;
+    display: flex;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    flex-direction: row;
     position: relative;
     border-radius: 2em;
-    background-color: #555353;
+    background-color: transparent
   }
   .search-box input[type=text] {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bold;
+    display:flex;
+    flex-wrap: wrap;
     color: #ffffff;
-    width: 2em;
-    height: 2em;
+    width: 700px;
+    height: 40px;
     padding: 0.3em 2.1em 0.3em 0.4em;
     border: none;
     box-sizing: border-box;
     margin-top: 3px;
     margin-left: 3px;
     border-radius: 2em;
-    background-color: #555353;
+    background-color: #c7c2c2;
     transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 150ms;
   }
   .search-box :-ms-input-placeholder{
-    color:#ffffff
+    color:#1d1d1d;
   }
   .search-box input[type=text]:focus {
-    outline: none;
+    outline: blue;
   }
   .search-box input[type=text]:focus, .search-box input[type=text]:not(:placeholder-shown) {
     width: 700px;
     transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
   }
-  .search-box input[type=text]:focus + button[type=reset], .search-box input[type=text]:not(:placeholder-shown) + button[type=reset] {
-    transform: rotate(-45deg) translateY(0);
-    transition: transform 150ms ease-out 800ms;
-  }
+  
   .search-box input[type=text]:focus + button[type=reset]:after, .search-box input[type=text]:not(:placeholder-shown) + button[type=reset]:after {
     opacity: 1;
     transition: top 150ms ease-out 950ms, right 150ms ease-out 950ms, opacity 150ms ease 950ms;
@@ -226,9 +274,10 @@
   }
   .search-box button[type=reset]:after {
     transform: rotate(90deg);
-    opacity: 0;
-    transition: transform 150ms ease-out, opacity 150ms ease-out;
+    opacity: 1;
+    
   }
+  
 
   
 
